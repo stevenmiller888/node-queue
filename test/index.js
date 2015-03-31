@@ -22,11 +22,10 @@ describe('queue', function(){
     queue.should.eql({ head: { next: undefined, val: 1 } });
   });
   
-  it('should dequeue', function(){
-    queue
-      .enqueue(1)
-      .dequeue();
-
+  it('should dequeue by returning the first element', function(){
+    queue.enqueue(1)
+    var ret = queue.dequeue();
+    ret.should.eql({ next: undefined, val: 1 });
     queue.should.eql({ head: undefined });
   });
 });
