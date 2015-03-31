@@ -23,9 +23,10 @@ describe('queue', function(){
   });
   
   it('should dequeue by returning the first element', function(){
-    queue.enqueue(1)
+    queue.enqueue('a');
+    queue.enqueue('b')
     var ret = queue.dequeue();
-    ret.should.eql({ next: undefined, val: 1 });
-    queue.should.eql({ head: undefined });
+    ret.should.eql('a');
+    queue.should.eql({ head: { next: undefined, val: 'b' } });
   });
 });
