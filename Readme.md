@@ -12,9 +12,7 @@ var queue = new Queue();
 queue
   .enqueue(1)
   .enqueue(2)
-  .dequeue()
-  .enqueue(3)
-  .print() // 2, 3
+  .dequeue() // 1
 ```
 
 ## License
