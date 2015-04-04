@@ -19,7 +19,7 @@ describe('queue', function(){
 
   it('should enqueue', function(){
     queue.enqueue(1);
-    queue.should.eql({ head: { next: undefined, val: 1 } });
+    queue.should.eql({ head: { next: undefined, val: 1 }, tail: { next: undefined, val: 1 } });
   });
   
   it('should dequeue by returning the first element', function(){
@@ -27,6 +27,6 @@ describe('queue', function(){
     queue.enqueue('b')
     var ret = queue.dequeue();
     ret.should.eql('a');
-    queue.should.eql({ head: { next: undefined, val: 'b' } });
+    queue.should.eql({ head: { next: undefined, val: 'b' }, tail: { next: undefined, val: 'b' } });
   });
 });
